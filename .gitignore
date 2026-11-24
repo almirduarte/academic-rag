@@ -1,0 +1,27 @@
+# Configurações locais e segredos
+.env
+.env.*
+!.env.example
+
+# Ambientes Python e arquivos gerados
+.venv/
+venv/
+python-env/
+academic-env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Logs e dados locais
+*.log
+data/
+uploads/
+*.db
+*.sqlite3
+*.dump
+*.backup
+
+# Chaves privadas e certificados com chave
+*.key
+*.p12
+*.pfx

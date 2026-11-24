@@ -1,0 +1,298 @@
+Solução: Agente de IA do tipo RAG, denominado Farol Acadêmico
+
+===================================================================================================================================
+Evidências de testes
+===================================================================================================================================
+Registro de perguntas e respostas utilizadas para validar o agente RAG
+Modelo utilizado: qwen3:14b
+Tempos de resposta: variando entre 46.911 s e 219.031 s
+Hardware: Os tempos obtidos nesta fase utilizam:
+    CPU: Processador Intel(R) Xeon(R) W-1350 @ 3.30GHz, 12 cores
+    Memória RAM: 32 GB
+    GPU: NVIDIA T600, com 4 GB de VRAM (limitada)
+===================================================================================================================================
+===================================================================================================================================
+1. Quantos anos escolares estão previstos no curso da escola naval?
+
+Resposta
+O curso da Escola Naval (EN) prevê um regime escolar composto por um **Ciclo Escolar (CE)** com duração de **quatro anos letivos**, realizado pelo aluno no grau hierárquico de Aspirante. Além disso, há um **Ciclo Pós-Escolar (CPE)** com duração de **um ano letivo**. Assim, a duração total do regime escolar é de **cinco anos letivos** (quatro anos no CE e um ano no CPE).
+Fontes
+
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 1
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 12
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 41
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 60
+
+Tempo total: 98.019 s
+
+Avaliação: correta.
+===================================================================================================================================
+2. Qual é a fórmula para cálculo da média ao final do 4º ano escolar?
+
+Resposta
+A fórmula para cálculo da média ao final do 4º ano  escolar (MG) é a média aritmética das Médias das Disciplinas que o  Aspirante cursar.
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 14                    
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 16                    
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 32                    
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 37                    
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 49                    
+Tempo total: 86.229 s
+
+Avaliação: correta.
+===================================================================================================================================
+3. Qual é a fórmula para cálculo da média geral ao final do 4º ano escolar?
+
+Resposta
+A fórmula para cálculo da média geral (MG) ao final do 4º ano escolar não está explicitamente mencionada no contexto fornecido. No entanto, segundo o contexto, o aproveitamento no conjunto das disciplinas de cada ano letivo, denominado MG, será expresso pela média aritmética das Médias das Disciplinas (MD) que o Aspirante cursar. Portanto, a fórmula para a MG é:
+
+**MG = Média aritmética das MDs de todas as disciplinas cursadas no ano letivo.**
+Fontes
+
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 14
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 16
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 32
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 37
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 49
+
+Tempo total: 118.778 s
+
+Avaliação: correta.
+===================================================================================================================================
+4. Qual é a fórmula para cálculo do grau de classificação ao final do 4º ano escolar?
+
+Resposta
+A fórmula para cálculo do grau de classificação ao final do 4º ano escolar (GC4) é a seguinte:
+
+**GC4 = (GC3 + 4 x G4) / 5**, onde:
+
+- **GC3** é o grau de classificação ao final do 3º ano;
+- **G4** é calculado por: **G4 = (7 x MG4 + 2 x AO4 + GTFM4) / 10**, onde:
+  - **MG4** é a média geral das disciplinas do 4º ano;
+  - **AO4** é a aptidão obtida no 4º ano;
+  - **GTFM4** é o aproveitamento na disciplina de Treinamento Físico Militar no 4º ano.
+Fontes
+
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 14
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 16
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 32
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 35
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 49
+
+Tempo total: 84.729 s
+
+Avaliação: correta.
+===================================================================================================================================
+5. Quais são as situações em que o aluno terá sua matrícula cancelada?
+
+Resposta
+As situações em que o aluno terá sua matrícula cancelada são as seguintes:
+
+I) Perda de qualquer das condições previstas para admissão, em consonância com o disposto na Lei de Ensino da Marinha;  
+II) Constatação, em qualquer tempo, da ocorrência de fraude na comprovação das condições de que tratam as Normas para o CPAEN;  
+III) Contração de matrimônio, viver em concubinato ou união estável ou ter filhos;  
+IV) Deferimento de pedido de cancelamento de matrícula;  
+V) Por ter sido considerado definitivamente incapaz em IS, por contrair moléstia, doença ou enfermidade ou for vítima de acidente, com ou sem relação de causa e efeito com o serviço;  
+VI) Por permanecer impedido, decorrente de IS, de cumprir as atividades previstas no currículo e/ou no PROENS, sejam aulas, atividades físicas, práticas complementares ou outras atividades, inclusive as relacionadas a embarque em navios e em embarcações, voos em aeronaves, exercícios no terreno, uso de viaturas e armamentos e as relacionadas à tropa, desde que o referido impedimento ultrapasse dois anos ou dois anos letivos;  
+VII) Por ultrapassar o prazo máximo estabelecido para tratamento de saúde, conforme disposto nas alíneas a e c do art. 3.3;  
+VIII) Não tiver a matrícula renovada ao término do período de trancamento;  
+IX) For punido com as penas previstas no RIEN, tendo sua Nota de Comportamento (NComp) do ano letivo inferior a quatro, conforme previsto na alínea d do art. 3.9;  
+X) For punido com pena de exclusão a bem da disciplina, de acordo com o RIEN;  
+XI) For julgado inapto por obter nota inferior a cinco na AO ou média inferior a quatro em qualquer dos três domínios da Nota de Conceito (NC), conforme previsto na alínea g do art. 3.9 e alínea u do art. 4.6;  
+XII) Impossibilidade de conclusão do respectivo ciclo, no prazo máximo permitido por estas normas;  
+XIII) Incidir mais de uma vez nas condições que o levaram ao regime de repetência;  
+XIV) For reprovado, em um mesmo ano, em mais de duas disciplinas;  
+XV) Estando em regime de repetência, for reprovado em qualquer disciplina que estiver cursando ou obtiver Média Global (MG) inferior a 4,5 (quatro inteiros e cinco décimos);  
+XVI) O Aspirante que incidir na condição de Baixo Desempenho de Oficialato (BDO), de acordo com o estabelecido nas Normas do Comando do Corpo de Aspirantes, por três vezes, consecutivas ou não, ao longo do CE;  
+XVII) Na eventualidade de positividade em exame toxicológico de substância psicoativa durante o CGO, garantido o direito de contraprova mediante recurso administrativo;  
+XVIII) Após o término da licença maternidade da Aspirante que tenha engravidado durante o CE.
+Fontes
+
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 9
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 10
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 11
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 12
+
+Tempo total: 219.031 s
+
+Avaliação: correta.
+===================================================================================================================================
+6. Com quantos paus se faz uma canoa?
+
+Resposta
+A pergunta "Com quantos paus se faz uma canoa?" não está relacionada ao conteúdo fornecido nos arquivos citados. O contexto apresentado refere-se a procedimentos, regulamentos e estrutura de cursos militares, não a fabricação de embarcações. Portanto, não é possível responder com base no material fornecido.
+Fontes
+
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 1
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 12
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 41
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 29
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 22
+
+Tempo total: 115.608 s
+
+Avaliação: informação não encontrada.
+===================================================================================================================================
+7. O homem pisou na lua?
+
+Resposta
+Não há informações no contexto fornecido sobre a pergunta "O homem pisou na lua?". O conteúdo apresentado refere-se a normas e procedimentos relacionados à Marinha do Brasil, não a eventos históricos ou científicos como a exploração lunar.
+Fontes
+
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 10
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 62
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 55
+
+Tempo total: 57.818 s
+
+Avaliação: informação não encontrada.
+===================================================================================================================================
+8. O que é IS?
+
+Resposta
+IS é a sigla para "Inspeção de Saúde".
+Fontes
+
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 33
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 8
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 11
+
+Tempo total: 63.907 s
+
+Avaliação: correta.
+===================================================================================================================================
+9. Quando é realizada a Inspeção de Saúde regulamentar e em que situação ocorre a eventual?
+
+Resposta
+A Inspeção de Saúde regulamentar é realizada no 3º Ano do Ciclo Escolar (CE). A Inspeção de Saúde eventual, denominada "Inspeção de Saúde para Verificação de Deficiência Funcional (VDF)", ocorre no caso de comprometimento da saúde do Aspirante, no decorrer do curso.
+Fontes
+
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 33
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 1
+
+Tempo total: 46.911 s
+
+Avaliação: correta.
+===================================================================================================================================
+10. Quais regras do curso distinguem aspirantes de ambos os sexos?
+
+Resposta
+O contexto fornecido não menciona regras que distinguem aspirantes de ambos os sexos. Portanto, não há informações disponíveis sobre diferenças específicas entre aspirantes do sexo masculino e feminino no curso.
+Fontes
+
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 1
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 12
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 41
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 34
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 13
+
+Tempo total: 190.382 s
+
+Avaliação: incorreta.
+===================================================================================================================================
+11. Quais regras do curso distinguem os aspirantes brasileiros dos estrangeiros?
+
+
+Resposta
+As regras que distinguem os aspirantes brasileiros dos estrangeiros no curso são as seguintes:
+
+- Os aspirantes estrangeiros podem ser reprovados, no máximo, em três disciplinas, sem cancelamento de matrícula, podendo entrar em regime de repetência. A reprovação em quatro ou mais disciplinas acarretará em cancelamento de matrícula, não cabendo a aplicação de nenhuma condição especial.
+
+- Os aspirantes estrangeiros podem cursar o ano seguinte, caso sejam reprovados exclusivamente em TFM, exceto no 4º Ano do CE. Uma nova reprovação implicará no cancelamento da matrícula.
+
+- Os aspirantes estrangeiros podem ser inseridos, de forma aleatória, na classificação do 1º Ano, de modo a serem distribuídos por vários Quartos, facilitando a sua integração com os demais aspirantes.
+
+- Os aspirantes estrangeiros deverão ser incluídos na EN, sem serem incorporados ao SAM.
+
+- Os aspirantes estrangeiros, que se apresentarem antes do dia previsto para o Período de Adaptação, serão incluídos na EN e passarão automaticamente à situação de adidos, aguardando matrícula.
+
+- Os aspirantes estrangeiros têm a opção de escolher um curso e respectiva habilitação, nos moldes estabelecidos nas Normas, definindo as disciplinas a serem cursadas ao longo do curso na EN.
+
+- A opção do aspirante estrangeiro não será computada dentro do limite do percentual estabelecido pela Administração Naval, para matrícula em Cursos/Habilitações da EN.
+Fontes
+
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 59
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 58
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 34
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 4
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 60
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 1
+
+Tempo total: 191.55 s
+
+Avaliação: parcialmente correto, porém incompleto e com imprecisões. Apresentou regras para estrangeiros relativas à reprovação em disciplinas, progressão com reprovação exclusiva em TFM, distribuição por Quartos, inclusão na EN sem incorporação ao SAM, apresentação antecipada e opção de curso e habilitação.
+
+Principais problemas:
+- Omitiu posições do 4º Ano reservadas obrigatoriamente a brasileiros; o trecho 35 não foi recuperado.
+- Omitiu o tempo adicional nas avaliações e as condições especiais de repetência, embora o trecho 58 estivesse entre as fontes.
+- Omitiu os critérios de classificação dos estrangeiros constantes do trecho 34.
+- Transformou a obrigação de distribuição aleatória — “deverão ser inseridos” — em possibilidade: “podem ser inseridos”.
+- Não preservou a ressalva que condiciona a concessão das medidas acadêmicas especiais.
+
+Problemas identificados: recuperação incompleta e resposta com omissões e alteração de sentido de uma obrigação. O registro das fontes mostra que parte das informações omitidas estava disponível no contexto. A influência do limite de saída não foi verificada nesta execução.
+===================================================================================================================================
+12. Em que ano é realizada a Inspeção de Saúde regulamentar?
+
+Resposta
+A Inspeção de Saúde regulamentar é realizada no 3º Ano do Ciclo Escolar (CE).
+Fontes
+
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 33
+    Port-79-2024-DEnsM-An-CGO.pdf, trecho 1
+
+Tempo total: 39.618 s
+
+Avaliação: correta.
+===================================================================================================================================
+13. Um Aspirante pode mudar de corpo ou habilitação depois de fazer sua opção?
+
+
+===================================================================================================================================
+14. No Ciclo Pós-Escolar, qual é o limite de faltas por disciplina? Faltas justificadas entram nesse limite?
+
+
+===================================================================================================================================
+15. Quais regras se aplicam à Aspirante em caso de gravidez? Inclua as consequências para a matrícula e as situações em que poderá requerer rematrícula.
+
+Resposta:
+A matrícula será trancada até o nascimento do filho, com desligamento do curso e licenciamento do SAM após a licença-maternidade. Poderá ser requerida rematrícula em caso de interrupção da gravidez, involuntária ou legalmente permitida, ou de parto natimorto.
+
+Avaliação: correta em relação aos trechos fornecidos e ao escopo da pergunta.
+
+Condições do teste: contexto selecionado manualmente; qwen3:14b; término normal, sem corte; 36,4 segundos.
+
+O que comprova: capacidade de interpretar essas disposições quando a pergunta é específica. Não comprova que o RAG consiga recuperá-las automaticamente.
+===================================================================================================================================
+
+Avaliação:
+Reavaliação dos oito testes
+Nº	Sua avaliação	Minha avaliação	Fundamentação
+1 — Duração do curso	Correta	Correta	Diferencia quatro anos do CE e um ano do CPE, explicando o total regular de cinco anos. Não precisava mencionar o prazo excepcional de seis anos do CE para responder à pergunta.
+2 — Média ao final do 4º ano	Correta	Aceitável, mas a pergunta é ambígua	A resposta assume que “média” significa MG. Essa interpretação é possível, mas também poderia ser entendida como G4 ou GC4. O agente deveria explicitar: “Se você se refere à Média Global (MG)…”.
+3 — Média geral ao final do 4º ano	Correta	Correta no conteúdo, com ressalva de redação	A regra geral da MG aplica-se ao quarto ano. A abertura dizendo que a fórmula não está explicitamente mencionada é desnecessária e transmite uma incerteza que a própria resposta resolve em seguida.
+4 — Grau de classificação	Correta	Correta nas fórmulas; terminologia a melhorar	GC4 e G4 coincidem com o trecho 35. Contudo, deve usar Média Global e Aptidão para o Oficialato, em vez de “média geral” e “aptidão obtida”.
+5 — Cancelamento de matrícula	Incompleta	Incompleta e com omissão que altera o sentido	Além de faltar a maior parte da lista, o sexto item omite uma condição essencial: o impedimento deve ultrapassar dois anos ou dois anos letivos.
+6 — Canoa	Informação não encontrada	Abstenção adequada	O agente respeitou a restrição de responder com base nos documentos. Não precisava interpretar a expressão figurada para reconhecer que não havia suporte documental.
+7 — Homem na Lua	Informação não encontrada	Abstenção adequada	Mesmo sendo uma pergunta de conhecimento geral, a resposta está de acordo com a proposta de consultar exclusivamente a documentação institucional.
+8 — Significado de IS	Correta	Parcialmente correta; não aprovaria integralmente	“Inspeção de Saúde” está correto, mas a explicação chama CE de Curso de Formação, quando é Ciclo Escolar. As demais afirmações precisam ser conferidas nos trechos 33 e 8.
+
+Uma correção na minha avaliação anterior
+Eu havia associado a pergunta sobre a “média ao final do quarto ano” diretamente ao GC4. Isso foi excessivamente categórico.
+
+MG, G4 e GC4 são grandezas diferentes. Sua sequência de perguntas 2, 3 e 4 foi útil justamente para evidenciar essa ambiguidade. A resposta da pergunta 2 não deve ser considerada errada apenas porque não apresentou GC4.
+O problema mais importante está no teste 5
+A resposta termina praticamente onde termina o trecho 9, mas suas fontes não incluem os trechos 10 e 11, que completam as hipóteses de cancelamento.
+
+Isso é um indício forte de falha na montagem do contexto. Não basta solicitar ao modelo que apresente todos os itens se ele não recebeu a continuação da seção.
+
+Além disso, a frase apresentada pode levar o leitor a entender que qualquer impedimento de saúde causa cancelamento. A norma citada estabelece um prazo. Preservar condições, limites e exceções precisa ser um critério explícito de aprovação dos testes.
+O teste 8 revela outro comportamento recorrente
+A pergunta era simples: “O que é IS?”
+
+O modelo acertou a definição e depois acrescentou informações que introduziram pelo menos um erro verificável. Uma resposta suficiente seria:
+IS significa Inspeção de Saúde.
+
+Não podemos validar a resposta inteira apenas porque sua primeira frase está correta. Precisamos conferir também as explicações adicionais — especialmente expansões de siglas, prazos e atribuições.
+Minha conclusão
+A solução melhorou, mas ainda precisa de correções na recuperação de listas completas e no controle de informações adicionais. Os testes 6 e 7 são positivos: o agente conseguiu reconhecer a ausência de suporte documental.
+
+Eu priorizaria agora corrigir o teste 5, recuperando a seção completa de cancelamento, e depois repetir os oito testes. Isso permitirá verificar se a mudança resolve a omissão sem prejudicar as respostas que já funcionam.

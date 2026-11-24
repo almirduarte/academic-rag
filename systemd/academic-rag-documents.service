@@ -1,0 +1,22 @@
+[Unit]
+Description=Processamento documental do Farol Academico
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ia-urx
+WorkingDirectory=/home/ia-urx/academic-rag-v1
+ExecStart=/home/ia-urx/academic-rag-v1/academic-env/bin/python -m app.document_worker
+Restart=on-failure
+RestartSec=5
+UMask=0077
+Environment=PYTHONUNBUFFERED=1
+Environment=TOKENIZERS_PARALLELISM=false
+MemoryMax=4G
+CPUQuota=200%
+KillMode=control-group
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

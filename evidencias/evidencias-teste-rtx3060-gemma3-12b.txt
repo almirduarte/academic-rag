@@ -1,0 +1,244 @@
+Solução: Agente de IA do tipo RAG, denominado Farol Acadêmico
+
+===================================================================================================================================
+Evidências de testes
+===================================================================================================================================
+Registro de perguntas e respostas utilizadas para validar o agente RAG
+Modelo utilizado: gemma3:12b
+Tempos de resposta: variando entre 46.911 s e 219.031 s
+Hardware: Os tempos obtidos nesta fase utilizam:
+    CPU: Processador Intel(R) Xeon(R) W-1350 @ 3.30GHz, 12 cores
+    Memória RAM: 32 GB
+    GPU: NVIDIA T600, com 4 GB de VRAM (limitada)
+===================================================================================================================================
+===================================================================================================================================
+1. Quantos anos escolares estão previstos no curso da escola naval?
+
+
+Avaliação: 
+===================================================================================================================================
+2. Qual é a fórmula para cálculo da média ao final do 4º ano escolar?
+
+
+Avaliação: 
+===================================================================================================================================
+3. Qual é a fórmula para cálculo da média geral ao final do 4º ano escolar?
+
+
+Avaliação: 
+===================================================================================================================================
+4. Qual é a fórmula para cálculo do grau de classificação ao final do 4º ano escolar?
+
+
+Avaliação: 
+===================================================================================================================================
+5. Quais são as situações em que o aluno terá sua matrícula cancelada?
+
+
+Avaliação: 
+===================================================================================================================================
+6. Com quantos paus se faz uma canoa?
+
+
+Avaliação: informação não encontrada.
+===================================================================================================================================
+7. O homem pisou na lua?
+
+
+Avaliação: informação não encontrada.
+===================================================================================================================================
+8. O que é IS?
+
+
+Avaliação: 
+===================================================================================================================================
+9. Quando é realizada a Inspeção de Saúde regulamentar e em que situação ocorre a eventual?
+
+Avaliação: 
+===================================================================================================================================
+10. Quais regras do curso distinguem aspirantes de ambos os sexos?
+
+Avaliação: incorreta.
+===================================================================================================================================
+11. Quais regras do curso distinguem os aspirantes brasileiros dos estrangeiros?
+
+
+Resposta:
+
+Modelo configurado: gemma3:12b
+embedding pergunta : 6.388s
+busca/contexto     : 0.050s
+geração local      : 36.525s
+total              : 42.963s
+
+=== PERGUNTA ===
+Quais regras do curso distinguem os aspirantes brasileiros dos estrangeiros?
+
+=== TRECHOS RECUPERADOS ===
+- Port-197-2026-DEnsM-An-NCGEN.pdf | chunk 54
+- Port-197-2026-DEnsM-An-NCGEN.pdf | chunk 35
+- Port-197-2026-DEnsM-An-NCGEN.pdf | chunk 4
+- Port-197-2026-DEnsM-An-NCGEN.pdf | chunk 59
+- Port-197-2026-DEnsM-An-NCGEN.pdf | chunk 1
+
+=== RESPOSTA LOCAL ===
+Os aspirantes brasileiros e estrangeiros são distinguidos pelas seguintes regras:
+
+*   **Inclusão na Reserva:** Aspirantes brasileiros, que eram Reservistas das Forças Armadas, são incluídos ou reincluídos na Reserva da Marinha (MB) e recebem o Certificado de Reservista. Aspirantes militares de Marinhas estrangeiras matriculados no CE ou CPE são incluídos na EN, sem, contudo, serem incorporados ao Serviço Auxiliar Militar (SAM).
+*   **Reprovação:** Aspirantes brasileiros podem ser reprovados, no máximo, em três disciplinas, sem cancelamento de matrícula. Aspirantes militares estrangeiros também podem ser reprovados, no máximo, em três disciplinas, sem cancelamento de matrícula. A reprovação em quatro ou mais disciplinas acarreta em cancelamento de matrícula para ambos.
+*   **TFM:** Aspirantes brasileiros podem cursar o ano seguinte, caso sejam reprovados exclusivamente em Trabalho de Formação Militar (TFM), exceto no 4º Ano do CE. A mesma regra se aplica aos aspirantes militares estrangeiros, com as mesmas restrições. Uma nova reprovação em TFM implica no cancelamento da matrícula para ambos.
+
+
+Avaliação:
+Esta resposta apresenta erros mais graves que a anterior. O Gemma construiu uma comparação atribuindo aos brasileiros regras especiais dos estrangeiros.
+Problemas identificados
+- Generalização indevida: afirmou que os limites de reprovação e a progressão com reprovação exclusiva em TFM se aplicam igualmente aos brasileiros. Essa extensão não está fundamentada no material apresentado.
+- Expansão incorreta de siglas:
+  - SAM: Serviço Ativo da Marinha, não “Serviço Auxiliar Militar”.
+  - TFM: Treinamento Físico Militar, não “Trabalho de Formação Militar”.
+- Comparação inadequada: reuniu inclusão na Reserva e inclusão na EN sem incorporação ao SAM como se fossem situações equivalentes.
+- Resposta incompleta: não apresentou os critérios de classificação nem as posições reservadas obrigatoriamente a brasileiros.
+Para atribuir cada omissão à recuperação ou à geração, precisamos conferir o conteúdo dos trechos desta versão do documento. Não podemos presumir que os índices correspondam aos da versão anterior.
+Registro do teste
+Item	Resultado
+Avaliação	Resposta inadequada, com generalização indevida e siglas inventadas
+Geração local	36,525 s
+Tempo total	42,963 s
+Trechos	54, 35, 4, 59 e 1
+
+Até aqui, o Gemma não demonstrou vantagem consistente sobre o Qwen.
+
+===================================================================================================================================
+12. Em que ano é realizada a Inspeção de Saúde regulamentar?
+
+A Inspeção de Saúde regulamentar é realizada no 3º Ano do CE.
+
+Avaliação: Correta.
+===================================================================================================================================
+13. Um Aspirante pode mudar de corpo ou habilitação depois de fazer sua opção?
+
+
+===================================================================================================================================
+14. No Ciclo Pós-Escolar, qual é o limite de faltas por disciplina? Faltas justificadas entram nesse limite?
+
+
+===================================================================================================================================
+15. Quais regras se aplicam à Aspirante em caso de gravidez? Inclua as consequências para a matrícula e as situações em que poderá requerer rematrícula.
+
+Avaliação: em relação aos trechos fornecidos e ao escopo da pergunta.
+
+Condições do teste: contexto selecionado manualmente; qwen3:14b; término normal, sem corte; 36,4 segundos.
+
+O que comprova: capacidade de interpretar essas disposições quando a pergunta é específica. Não comprova que o RAG consiga recuperá-las automaticamente.
+===================================================================================================================================
+16. Um guarda marinha no ciclo pos escolar, durante a 3 fase, ou seja durante a viagem de instrução, foi diagnosticado com doença que provavelmente irá dar restrição de embarque, apto para o SAM com restrição, e seu retorno para o brasil. O militar já completou todas as avaliações previstas para essa fase.
+
+
+Resposta:
+Modelo configurado: gemma3:12b
+embedding pergunta : 4.854s
+busca/contexto     : 0.051s
+geração local      : 11.635s
+total              : 16.540s
+
+=== PERGUNTA ===
+Um guarda marinha no ciclo pos escolar, durante a 3 fase, ou seja durante a viagem de instrução, foi diagnosticado com doença que provavelmente irá dar restrição de embarque, apto para o SAM com restrição, e seu retorno para o brasil. O militar já completou todas as avaliações previstas para essa fase.
+
+=== TRECHOS RECUPERADOS ===
+- Port-197-2026-DEnsM-An-NCGEN.pdf | chunk 38
+- Port-197-2026-DEnsM-An-NCGEN.pdf | chunk 49
+- Port-197-2026-DEnsM-An-NCGEN.pdf | chunk 56
+- Port-197-2026-DEnsM-An-NCGEN.pdf | chunk 10
+- Port-197-2026-DEnsM-An-NCGEN.pdf | chunk 1
+
+=== RESPOSTA LOCAL ===
+Considerando o contexto fornecido, a situação do guarda-marinha (GM) apresenta algumas possibilidades e limitações:
+
+**Possibilidade de reprovação:**
+
+*   Se o GM encontrar-se impossibilitado de realizar a 3ª fase do CPE, por motivo de saúde, será considerado reprovado naquela fase, realizando-a no ano seguinte (art. 4.6, alínea y).
+
+**Possibilidade de aplicação de regra para GM com restrição de embarque:**
+
+*   O GM também poderá ser considerado reprovado se encontrar-se impossibilitado de realizar a 3ª fase do CPE por motivo de saúde, caso se enquadre na hipótese de um GM denunciado em processo comum ou militar, em decorrência da sua impossibilidade legal de se afastar do país (art. 4.6, alínea z, I).
+
+**Outras considerações:**
+
+*   O contexto não esclarece como o diagnóstico de doença que provavelmente dará restrição de embarque, apto para o SAM com restrição e retorno ao Brasil, afeta a aplicação da regra de reprovação na 3ª fase do CPE.
+*   O GM tem direito à licença para tratamento de saúde própria nos termos de instruções específicas baixadas pela MB (art. 5.3, alínea d).
+*   O GM será incluído na Reserva da Marinha ao ser licenciado do SAM (art. 5.3, alínea c).
+
+**Duração das etapas:**
+
+O contexto não especifica a duração regular de cada fase do CPE.
+
+
+Avaliação:
+O Gemma foi mais cauteloso que o Qwen neste teste, mas a resposta ainda contém erros relevantes. Recuperou os mesmos cinco trechos do teste anterior, o que favorece a comparação.
+
+| Aspecto | Resultado |
+|---|---|
+| Reprovação automática | Melhorou: apresentou a regra como condicional. |
+| Insuficiência do contexto | Reconheceu que os trechos não esclarecem a aplicação ao caso. |
+| Saúde e impedimento judicial | **Misturou hipóteses distintas:** a alínea z, I não é condição adicional para aplicar a regra de saúde. |
+| Licença para tratamento de saúde | Omitiu a condição presente no trecho 56: **ser julgado incapaz temporariamente**. |
+| Avaliações já concluídas | Não examinou expressamente esse detalhe central. |
+| Reserva e duração das etapas | Acrescentou informações que não ajudam a responder ao caso. |
+
+O trecho sobre duração sugere que a instrução do prompt relativa a etapas pode estar sendo aplicada mesmo quando a pergunta não trata de duração. Vamos registrar isso e manter o prompt durante a comparação.
+Resposta esperada, com os trechos apresentados
+A alínea y do art. 4.6 prevê reprovação quando o GM estiver impossibilitado de realizar a 3ª fase do CPE por motivo de saúde. Entretanto, os trechos fornecidos não esclarecem como essa regra se aplica ao retorno durante a viagem após a conclusão de todas as avaliações. Também não estabelecem que concluir as avaliações equivale a concluir a fase. Como a restrição de embarque ainda é uma possibilidade, não há fundamento suficiente nesses trechos para concluir aprovação ou reprovação no caso apresentado.
+
+Registro do teste
+Avaliação: parcialmente correto, com reconhecimento de limitações, mas com associação indevida entre hipóteses normativas, omissão de condição e conteúdo desnecessário.
+Geração: 11,635 s. Total: 16,540 s.
+
+Ainda não há evidência suficiente para substituir o Qwen. O próximo teste pode ser a pergunta abrangente sobre estrangeiros:
+
+===================================================================================================================================
+17. A alínea y do art. 4.6 trata do GM impossibilitado de realizar a 3ª fase do CPE. O contexto esclarece expressamente se essa regra também se aplica ao GM que retorna por motivo de saúde após concluir todas as avaliações? Diferencie o que está escrito do que depende de interpretação. Concluir as avaliações equivale, expressamente no documento, a concluir a fase?
+
+
+Avaliação: A resposta melhorou no início, mas voltou a afirmar algo sem fundamento no final.
+
+O problema está nesta frase:
+“Concluir as avaliações equivale, expressamente no documento, a concluir a fase.”
+
+A justificativa apresentada — a alínea y mencionar a impossibilidade de realizar a fase — não demonstra essa equivalência. O modelo apresentou uma dedução como se estivesse expressa na norma.
+
+Também houve uma mudança importante: os trechos recuperados são diferentes dos anteriores. Portanto, este teste alterou tanto a pergunta quanto o contexto; não podemos atribuir a melhora apenas à formulação da pergunta.
+===================================================================================================================================
+
+Avaliação:
+Reavaliação dos oito testes
+Nº	Sua avaliação	Minha avaliação	Fundamentação
+1 — Duração do curso	Correta	Correta	Diferencia quatro anos do CE e um ano do CPE, explicando o total regular de cinco anos. Não precisava mencionar o prazo excepcional de seis anos do CE para responder à pergunta.
+2 — Média ao final do 4º ano	Correta	Aceitável, mas a pergunta é ambígua	A resposta assume que “média” significa MG. Essa interpretação é possível, mas também poderia ser entendida como G4 ou GC4. O agente deveria explicitar: “Se você se refere à Média Global (MG)…”.
+3 — Média geral ao final do 4º ano	Correta	Correta no conteúdo, com ressalva de redação	A regra geral da MG aplica-se ao quarto ano. A abertura dizendo que a fórmula não está explicitamente mencionada é desnecessária e transmite uma incerteza que a própria resposta resolve em seguida.
+4 — Grau de classificação	Correta	Correta nas fórmulas; terminologia a melhorar	GC4 e G4 coincidem com o trecho 35. Contudo, deve usar Média Global e Aptidão para o Oficialato, em vez de “média geral” e “aptidão obtida”.
+5 — Cancelamento de matrícula	Incompleta	Incompleta e com omissão que altera o sentido	Além de faltar a maior parte da lista, o sexto item omite uma condição essencial: o impedimento deve ultrapassar dois anos ou dois anos letivos.
+6 — Canoa	Informação não encontrada	Abstenção adequada	O agente respeitou a restrição de responder com base nos documentos. Não precisava interpretar a expressão figurada para reconhecer que não havia suporte documental.
+7 — Homem na Lua	Informação não encontrada	Abstenção adequada	Mesmo sendo uma pergunta de conhecimento geral, a resposta está de acordo com a proposta de consultar exclusivamente a documentação institucional.
+8 — Significado de IS	Correta	Parcialmente correta; não aprovaria integralmente	“Inspeção de Saúde” está correto, mas a explicação chama CE de Curso de Formação, quando é Ciclo Escolar. As demais afirmações precisam ser conferidas nos trechos 33 e 8.
+
+Uma correção na minha avaliação anterior
+Eu havia associado a pergunta sobre a “média ao final do quarto ano” diretamente ao GC4. Isso foi excessivamente categórico.
+
+MG, G4 e GC4 são grandezas diferentes. Sua sequência de perguntas 2, 3 e 4 foi útil justamente para evidenciar essa ambiguidade. A resposta da pergunta 2 não deve ser considerada errada apenas porque não apresentou GC4.
+O problema mais importante está no teste 5
+A resposta termina praticamente onde termina o trecho 9, mas suas fontes não incluem os trechos 10 e 11, que completam as hipóteses de cancelamento.
+
+Isso é um indício forte de falha na montagem do contexto. Não basta solicitar ao modelo que apresente todos os itens se ele não recebeu a continuação da seção.
+
+Além disso, a frase apresentada pode levar o leitor a entender que qualquer impedimento de saúde causa cancelamento. A norma citada estabelece um prazo. Preservar condições, limites e exceções precisa ser um critério explícito de aprovação dos testes.
+O teste 8 revela outro comportamento recorrente
+A pergunta era simples: “O que é IS?”
+
+O modelo acertou a definição e depois acrescentou informações que introduziram pelo menos um erro verificável. Uma resposta suficiente seria:
+IS significa Inspeção de Saúde.
+
+Não podemos validar a resposta inteira apenas porque sua primeira frase está correta. Precisamos conferir também as explicações adicionais — especialmente expansões de siglas, prazos e atribuições.
+Minha conclusão
+A solução melhorou, mas ainda precisa de correções na recuperação de listas completas e no controle de informações adicionais. Os testes 6 e 7 são positivos: o agente conseguiu reconhecer a ausência de suporte documental.
+
+Eu priorizaria agora corrigir o teste 5, recuperando a seção completa de cancelamento, e depois repetir os oito testes. Isso permitirá verificar se a mudança resolve a omissão sem prejudicar as respostas que já funcionam.

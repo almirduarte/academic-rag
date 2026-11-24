@@ -1,6 +1,6 @@
 # Farol Acadêmico — academic-rag
 
-Solução de consulta a documentos por perguntas em linguagem natural.
+Assistente de IA baseado em RAG para consulta a documentos por perguntas em linguagem natural.
 
 O projeto utiliza RAG (*Retrieval-Augmented Generation*): recupera trechos dos documentos e os fornece a um modelo de linguagem para elaborar a resposta. A interface apresenta a resposta, as fontes utilizadas e o tempo de processamento.
 

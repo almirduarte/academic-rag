@@ -1,14 +1,12 @@
 # Farol Acadêmico — academic-rag
 
-Solução de consulta a documentos por perguntas em linguagem natural, desenvolvida por **Almir de Oliveira Duarte Junior**, por iniciativa própria, e associada à **Uranux**.
+Solução de consulta a documentos por perguntas em linguagem natural.
 
 O projeto utiliza RAG (*Retrieval-Augmented Generation*): recupera trechos dos documentos e os fornece a um modelo de linguagem para elaborar a resposta. A interface apresenta a resposta, as fontes utilizadas e o tempo de processamento.
 
 Embeddings, busca, reordenação dos candidatos e geração são processados na infraestrutura que hospeda a aplicação. Documentos e perguntas não precisam ser enviados a uma API externa de inteligência artificial. A instituição pode escolher os documentos, o modelo e as instruções de resposta, avaliar os resultados e corrigir o processo de recuperação. Isso permite maior controle, mas não elimina imprecisões, omissões ou vieses.
 
 ## Escopo e limitações
-
-A base do piloto foi corrigida para utilizar `Port-197-2026-DEnsM-An-NCGEN.pdf`, substituindo a norma anterior. A relação atual deve ser consultada em **Documentos disponíveis**: ela reflete os arquivos efetivamente publicados, incluindo inclusões e exclusões posteriores. Outros PDFs podem ser incorporados pela administração documental, após extração, revisão e publicação.
 
 - As respostas devem ser conferidas nas fontes, especialmente quando envolvem regras, prazos e exceções.
 - Perguntas abrangentes podem recuperar apenas parte das disposições relevantes.
@@ -159,16 +157,6 @@ O cadastro atual utiliza `use_id`, `use_setor`, `use_password`, `use_cpf`, `use_
 
 Nome completo, e-mail, CPF, setor e senha são obrigatórios. O e-mail é normalizado para minúsculas e tem limite de 50 caracteres na estrutura atual. O CPF passa por validação de formato e dígitos verificadores, o que não comprova a identidade da pessoa.
 
-| Código | Setor |
-|---|---|
-| 1 | Comando |
-| 2 | Superintendência de Ensino (SE) |
-| 3 | Superintendência de Administração (SA) |
-| 4 | ComCA - Oficiais |
-| 5 | ComCA - Aspirantes |
-| 6 | ComCA - Saúde |
-| 7 | Centro de Informática (CInf) |
-| 8 | SE - SOEPE |
 
 O setor é um dado cadastral; não concede privilégios. A administração documental depende exclusivamente de `users.use_admin`, cujo padrão é `false`. O cadastro web e a edição do próprio cadastro não permitem alterar esse atributo.
 
@@ -283,7 +271,7 @@ A página administrativa atualiza tarefas e catálogo a cada cinco segundos. For
 - Não há OCR. PDF com página sem texto extraível é recusado; a extração automática pode perder estrutura mesmo quando produz texto.
 - Não há edição do texto extraído pela interface. Em caso de erro, cancele e corrija o arquivo de origem.
 - O resumo publicado é um mapa extrativo de leitura; não é uma interpretação gerada pelo LLM.
-- O perfil de correção de fórmulas da NCGEN é vinculado ao SHA-256 do PDF conferido; não é aplicado indiscriminadamente a outros arquivos.
+- O perfil de correção de fórmulas é vinculado ao SHA-256 do PDF conferido; não é aplicado indiscriminadamente a outros arquivos.
 - Uma tarefa por documento/nome pode permanecer ativa; não há processamento paralelo de várias tarefas pelo worker.
 - Cancelamento disponível enquanto aguarda processamento, revisão ou publicação; não durante execução.
 
@@ -673,5 +661,3 @@ Licenciamento para redistribuição, oferta a terceiros e outras permissões pod
 Organizações da Marinha podem utilizar a licença pública para suas operações internas. Uma autorização institucional complementar poderá disciplinar expressamente compartilhamento entre organizações e hospedagem centralizada; este README não concede essa autorização adicional.
 
 Bibliotecas, modelos, documentos e demais componentes de terceiros permanecem sujeitos às respectivas licenças e direitos. A licença do código não concede direitos sobre os documentos ingeridos, dados pessoais, marcas ou imagens de terceiros.
-
-Este projeto é independente do Assinador XAdES, dos sistemas SAEN e do framework Uranux. As condições aqui descritas não alteram o licenciamento desses outros produtos.
